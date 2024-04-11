@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Demo_T_REX.Models.San_Pham>
+
+@foreach (var item in Model)
+{
+    <div class="col-md col-3">
+        <figure class="card-product-grid card-sm">
+            <a href="@Url.Action("Detail", "Home", new { id = item.MaSP })" class="img-wrap">
+                <img src="@item.Img">
+            </a>
+            <div class="text-wrap p-3">
+                <a href="@Url.Action("Detail", "Home", new { id = item.MaSP })" class="title">@item.TenSP</a>
+                <span class="badge badge-danger"> -@item.GiamGia% </span>
+            </div>
+        </figure>
+    </div> <!-- col.// -->
+}

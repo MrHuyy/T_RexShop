@@ -1,0 +1,8 @@
+﻿@model IEnumerable<Demo_T_REX.Models.Colors>
+
+@foreach (var item in Model)
+{
+    @*<label style="border-bottom: 1px solid black; " class="form-check"> 	  @Html.ActionLink(@item.ID, "GetBookBySize/" + item.ID, "Home")    </label>*@
+    <a href="@Url.Action("GetBookBycolors", "Home",  new { area = "", Color =  @item.Name })" style="border-bottom: 1px solid black; " class="form-check">@item.Name</a>
+}
+

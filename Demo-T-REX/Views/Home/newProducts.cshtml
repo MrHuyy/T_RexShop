@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Demo_T_REX.Models.San_Pham>
+
+@foreach (var item in Model)
+{
+    <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+        <div class="card card-sm card-product-grid">
+            <a href="@Url.Action("Detail", "Home", new { id = item.MaSP })" class="img-wrap"> <img src="@item.Img"> </a>
+            <figcaption class="info-wrap">
+                <a href="@Url.Action("Detail", "Home", new { id = item.MaSP })" class="title">@item.TenSP</a>
+                <div class="price mt-1">$@item.Don_Gia_Ban  <a style="color:red;">-@item.GiamGia%</a></div>
+                <!--<div style="color:red;" class="price mt-1">-@item.GiamGia%</div>--><!-- price-wrap.// -->
+            </figcaption>
+        </div>
+    </div> <!-- col.// -->
+}

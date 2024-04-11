@@ -1,0 +1,75 @@
+﻿@model Demo_T_REX.Models.Hoa_Don
+
+@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="section-content padding-y">
+    <div class="container" style="max-width: 720px;">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 class="card-title mb-3">Delivery info</h4>
+
+
+                   
+                    <div class="form-row">
+                        <div style="color: black;" class="col form-group">
+                            <label>Tên người nhận</label>
+                            @*<input type="text" class="form-control" placeholder=" ">*@
+                            @Html.EditorFor(model => model.TenNguoNhan, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TenNguoNhan, "", new { @class = "text-danger" })
+                        </div> <!-- form-group end.// -->
+
+                        <div style="color: black;" class="col form-group">
+                            <label>Phone</label>
+                            @*<input type="text" class="form-control" placeholder="">*@
+                            @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger" })
+                        </div> <!-- form-group end.// -->
+                    </div> <!-- form-row end.// -->
+
+
+                    <div style="color: black;" class="form-group">
+                        <label>Adress</label>
+                        @*<div class="form-control" rows="2">*@
+                            @Html.EditorFor(model => model.DiaChiNhan, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.DiaChiNhan, "", new { @class = "text-danger" })
+                        @*</div>*@
+                    </div> <!-- form-group// -->
+                    <!--<div class="form-group">
+                        <label>Ghi chú đơn hàng</label>
+                        <textarea class="form-control" rows="2"></textarea>
+                    </div>--> <!-- form-group// -->
+
+                </div> <!-- card-body.// -->
+            </div> <!-- card .// -->
+
+
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h4 style="text-align: center;" class="card-title mb-4">Payment</h4>
+                    <form>
+                        <input class="subscribe btn btn-primary btn-block" type="submit" value="Confirm"> </input>
+                    </form>
+
+                    @*<div class="form-group">
+
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Save" class="btn btn-default" />
+                        </div>
+                    </div>*@
+                </div> <!-- card-body.// -->
+            </div> <!-- card .// -->
+
+         }
+            
+
+        </div> <!-- container .//  -->
+</section>
+<!-- ========================= SECTION CONTENT END// ========================= -->
+
+

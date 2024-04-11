@@ -1,0 +1,149 @@
+﻿@model Demo_T_REX.Models.San_Pham
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Trang Chỉnh Sửa</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>Thông Tin Sản Phẩm</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.MaSP)
+<div class="col-7 col-lg-8">
+    <div class="form-group">
+        <div class="control-label col-md-2">Tên Giày</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.TenSP, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.TenSP, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Size (Kích Cỡ)</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Size, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Size, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Màu Sắc</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.MauSac, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MauSac, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Đơn Giá Bán</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Don_Gia_Ban, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Don_Gia_Ban, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Thông Tin Sản Phẩm</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Mo_ta_SP, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Mo_ta_SP, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Giảm Giá (%)</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.GiamGia, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.GiamGia, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="control-label col-md-2">Số Lượng</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SL_TonKho, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.SL_TonKho, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Hình Ảnh</div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Img, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Img, "", new { @class = "textdanger" })
+            <input type="file" name="fileUpload" id="fileUpload" accept="image/*"
+                   style="display:none;" />
+            <input type="button" id="btnUpload" value="Chọn" class="btn btn-success" style="margin-top: 12px" />
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="control-label col-md-2">Hãng Giày</div>
+        <div class="col-md-10">
+            @Html.DropDownList("MaLoai", new SelectList(Model.ListNhanHieu, "MaLoai", "TenLoaiSP"), new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.MaLoai, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Lưu" class="btn btn-default" />
+        </div>
+    </div>
+    <div>
+        @Html.ActionLink("Về lại trang chủ", "SanPham")
+    </div>
+</div>
+    <div class="col-5 col-lg-4">
+        <dl class="dl-horizontal">
+            <dd>
+                <img src="@Model.Img" style="width:500px; height: 300px">
+            </dd>
+        </dl>
+    </div>
+</div>
+}
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+<script>
+    $(function () {
+        $('#btnUpload').click(function () {
+            $('#fileUpload').trigger('click');
+        });
+    });
+    $('#fileUpload').change(function () {
+        if (window.FormData !== undefined) {
+            var fileUpload = $('#fileUpload').get(0);
+            var files = fileUpload.files;
+            var formData = new FormData();
+            formData.append('file', files[0]);
+            $.ajax(
+                {
+                    type: 'POST',
+                    url: '/Admin/Home/ProcessUpload',
+                    contentType: false,
+                    processData: false,
+                    data: formData,
+                    success: function (urlImage) {
+                        $('#pictureUpload').attr('src', urlImage);
+                        $('#Img').val(urlImage);
+                    },
+                    error: function (err) {
+                        alert('Error ', err.statusText);
+                    }
+                });
+        }
+    });
+</script>
+}

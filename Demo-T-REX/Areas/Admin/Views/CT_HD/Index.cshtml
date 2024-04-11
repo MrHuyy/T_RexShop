@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Demo_T_REX.Models.CT_HD>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+
+
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.San_Pham.TenSP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Don_Gia_Ban)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SL_Mua)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.San_Pham.TenSP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Don_Gia_Ban)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SL_Mua)
+        </td>
+       
+    </tr>
+}
+
+</table>

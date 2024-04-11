@@ -1,0 +1,83 @@
+﻿@model Demo_T_REX.Models.Hoa_Don
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Hoa_Don</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayLapHD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayLapHD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeliverDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeliverDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isConplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isConplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isPaid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isPaid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TenNguoNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenNguoNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DiaChiNhan)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChiNhan)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaKH)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaKH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaHD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

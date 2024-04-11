@@ -1,0 +1,51 @@
+﻿@model Demo_T_REX.Models.CT_HD
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CT_HD</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hoa_Don.SDT)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hoa_Don.SDT)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.San_Pham.TenSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.San_Pham.TenSP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Don_Gia_Ban)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Don_Gia_Ban)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SL_Mua)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_Mua)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

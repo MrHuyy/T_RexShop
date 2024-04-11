@@ -1,0 +1,195 @@
+﻿.star-rating li {
+    padding: 0;
+}
+
+.star-rating i {
+    font-size: 14px;
+    color: #ffc000;
+}
+
+
+h2 {
+    color: #000;
+    font-size: 26px;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    position: relative;
+    margin: 30px 0 80px;
+}
+
+    h2 b {
+        color: #ffc000;
+    }
+
+    h2::after {
+        content: "";
+        width: 100px;
+        position: absolute;
+        margin: 0 auto;
+        height: 4px;
+        background: rgba(0, 0, 0, 0.2);
+        left: 0;
+        right: 0;
+        bottom: -20px;
+    }
+
+.haha {
+    background: linear-gradient(-45deg, #ffc000, #333, #ffc000);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.carousel2 {
+    margin: 50px auto;
+    padding: 0 70px;
+}
+
+    .carousel2 .item2 {
+        min-height: 330px;
+        text-align: center;
+        overflow: hidden;
+    }
+
+        .carousel2 .item2 .img-box {
+            height: 160px;
+            width: 100%;
+            position: relative;
+        }
+
+        .carousel2 .item2 img {
+            max-width: 100%;
+            max-height: 100%;
+            display: inline-block;
+            position: absolute;
+            bottom: 0;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+
+        .carousel2 .item2 h4 {
+            font-size: 18px;
+            margin: 10px 0;
+            background: linear-gradient(45deg, #fff, #e2f7eb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 300% 300%;
+        }
+
+        .carousel2 .item2 .btn {
+            color: #333;
+            border-radius: 0;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-weight: bold;
+            background: none;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-top: 5px;
+            line-height: 16px;
+            transition: all 0.3s;
+        }
+
+            .carousel2 .item2 .btn:hover, .carousel2 .item2 .btn:focus {
+                color: #fff;
+                background: #323643;
+                border-color: #323643;
+                box-shadow: none;
+            }
+
+            .carousel2 .item2 .btn i {
+                font-size: 14px;
+                font-weight: bold;
+                margin-left: 5px;
+            }
+
+    .carousel2 .thumb-wrapper {
+        text-align: center;
+    }
+
+    .carousel2 .thumb-content {
+        padding: 15px;
+    }
+
+    .carousel2 .carousel-control {
+        height: 100px;
+        width: 40px;
+        background: none;
+        margin: auto 0;
+        background: rgba(0, 0, 0, 0.2);
+    }
+
+        .carousel2 .carousel-control i {
+            font-size: 30px;
+            position: absolute;
+            top: 50%;
+            display: inline-block;
+            margin: -16px 0 0 0;
+            z-index: 5;
+            left: 0;
+            right: 0;
+            color: rgba(0, 0, 0, 0.8);
+            text-shadow: none;
+            font-weight: bold;
+        }
+
+    .carousel2 .item-price {
+        font-size: 13px;
+        padding: 2px 0;
+    }
+
+        .carousel2 .item-price strike {
+            color: #576574;
+            margin-right: 5px;
+        }
+
+        .carousel2 .item-price span {
+            color: #4cd137;
+            font-size: 110%;
+        }
+
+    .carousel2 .carousel-control2.left i {
+        margin-left: -3px;
+    }
+
+    .carousel2 .carousel-control2.left i {
+        margin-right: -3px;
+    }
+
+    .carousel2 .carousel-indicators2 {
+        bottom: -50px;
+    }
+
+.carousel-indicators2 li, .carousel-indicators2 li.active {
+    width: 10px;
+    height: 10px;
+    margin: 4px;
+    border-radius: 50%;
+    border-color: transparent;
+}
+
+.carousel-indicators2 li {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+    .carousel-indicators2 li.active {
+        background: rgba(0, 0, 0, 0.6);
+    }

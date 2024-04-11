@@ -1,0 +1,7 @@
+﻿@model IEnumerable<Demo_T_REX.Models.sizes>
+
+@foreach (var item in Model)
+{
+    @*<label style="border-bottom: 1px solid black; " class="form-check"> 	  @Html.ActionLink(@item.ID, "GetBookBySize/" + item.ID, "Home")    </label>*@
+    <a href="@Url.Action("GetBookBySize", "Home",  new { area = "", id =  @item.ID })" style="border-bottom: 1px solid black; " class="form-check"> 	  @item.ID    </a>
+}

@@ -1,0 +1,87 @@
+﻿@model Demo_T_REX.Models.San_Pham
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Xoá Giày</h2>
+
+<h3>Bạn có chắc chắn muốn xoá giày này?</h3>
+<div>
+    <h4>Thông Tin Sản Phẩm</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Tên Nhãn Hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nhan_Hieu.TenLoaiSP)
+        </dd>
+
+        <dt>
+           Tên Sản Phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSP)
+        </dd>
+
+        <dt>
+            Size
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+
+        <dt>
+            Màu Sắc
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MauSac)
+        </dd>
+
+        <dt>
+            Đơn Giá Bán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Don_Gia_Ban)
+        </dd>
+
+        <dt>
+            Thông Tin Giày
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mo_ta_SP)
+        </dd>
+        <dt>
+            Giảm Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GiamGia)
+        </dd>
+        <dt>
+            Số Lượng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SL_TonKho)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Về lại trang chủ", "SanPham")
+        </div>
+    }
+</div>

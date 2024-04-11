@@ -1,0 +1,27 @@
+﻿@model Demo_T_REX.Models.Nhan_Hieu
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Nhan_Hieu</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenLoaiSP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenLoaiSP)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaLoai }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

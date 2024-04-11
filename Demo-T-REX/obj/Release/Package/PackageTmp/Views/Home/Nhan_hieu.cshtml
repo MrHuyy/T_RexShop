@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Demo_T_REX.Models.Nhan_Hieu>
+
+
+
+
+
+
+@foreach (var item in Model)
+{
+    <label style="border-bottom: 1px solid black; " class="form-check"> 	  @Html.ActionLink(item.TenLoaiSP, "GetBookByCategory/" + item.MaLoai, "Home")    </label>
+       
+}
+

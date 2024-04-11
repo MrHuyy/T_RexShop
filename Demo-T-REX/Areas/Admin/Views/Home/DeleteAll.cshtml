@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "DeleteAll";
+    Layout = "~/Views/_AdminLayout.cshtml";
+}
+
+<h2>Xoá Tất Cả Giày</h2>
+
+<h3>Bạn có chắc chắn muốn xoá TẤT CẢ giày?</h3>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="DeleteAll" class="btn btn-default" /> |
+            @Html.ActionLink("Về lại trang chủ", "SanPham")
+        </div>
+    }
+</div>
